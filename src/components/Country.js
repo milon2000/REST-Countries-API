@@ -1,6 +1,5 @@
 import React from "react"
 
-
 const Country = ({flag, name, population, region, capitol, countriesToShow}) => {
     return (
         <div className="country">

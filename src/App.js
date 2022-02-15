@@ -24,7 +24,7 @@ function App() {
             value={searchInput}
             onChange = {handleSearchChange} />
         </div>
-      <CountryList countries={countries} searchInput = {searchInput}/>
+      <CountryList countries={countries} searchInput = {searchInput} handleSearchChange = {handleSearchChange}/>
     </div>
   );
 }
