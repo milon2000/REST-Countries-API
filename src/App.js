@@ -6,10 +6,6 @@ function App() {
   const [countries, setCountries] = useState([]);
   const [searchInput, setSearchInput] = useState('');
 
-  const handleSearchChange =(event) => {
-      setSearchInput(event.target.value)
-      console.log(event.target.value)
-  }
 
   useEffect(() => {
       axios.get('https://restcountries.com/v3.1/all')
@@ -17,6 +13,12 @@ function App() {
           setCountries(res.data)
       })
   }, [])
+
+  const handleSearchChange =(event) => {
+    setSearchInput(event.target.value)
+    console.log(event.target.value)
+}
+ 
   return (
     <div className="App">
        <div>
@@ -24,6 +26,7 @@ function App() {
             value={searchInput}
             onChange = {handleSearchChange} />
         </div>
+        
       <CountryList countries={countries} searchInput = {searchInput} handleSearchChange = {handleSearchChange}/>
     </div>
   );
