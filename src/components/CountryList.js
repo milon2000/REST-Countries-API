@@ -1,49 +1,59 @@
-import React, {
-    useState, useEffect
-} from "react";
+import React from "react";
 
 import Country from "./Country";
 
-const CountryList = ({countries, searchInput}) => {
 
-    const [option, setOption] = useState('');
-
-
+const CountryList = ({countries, searchInput, option}) => {
 
     let countriesToShow = countries.filter((country) =>
     country.name.common.toLowerCase().includes(searchInput.toLowerCase())
   );
-  const handleValueChange = (event) => {
-    setOption(event.target.value)
-  }
+
 
   const africa = countries.filter((country) => country.region.toLowerCase().includes(option.toLowerCase()))
   const america = countries.filter((country) => country.region.toLowerCase().includes(option.toLowerCase()))
   const asia = countries.filter((country) => country.region.toLowerCase().includes(option.toLowerCase()))
   const europe = countries.filter((country) => country.region.toLowerCase().includes(option.toLowerCase()))
   const oceania = countries.filter((country) => country.region.toLowerCase().includes(option.toLowerCase()))
-  
-console.log('afryka jest tu', africa)
-console.log('europa jest tu', europe)
 
-if(option === 'Africa') {
+
+if(option === 'Africa' && searchInput === '') {
     return (
         <div className="countries">
            {africa.map(country => 
             <Country key = {country.name.official} country = {country}  />)} </div>
     )
+} else if(option === 'America' && searchInput === '') {
+    return (
+        <div className="countries">
+           {america.map(country => 
+            <Country key = {country.name.official} country = {country}  />)} </div>
+    )
+} else if(option === 'Asia' && searchInput === '') {
+    return (
+        <div className="countries">
+           {asia.map(country => 
+            <Country key = {country.name.official} country = {country}  />)} </div>
+    )
+} else if(option === 'Europe' && searchInput === '') {
+    return (
+        <div className="countries">
+           {europe.map(country => 
+            <Country key = {country.name.official} country = {country}  />)} </div>
+    )
+
+
+}else if(option === 'Oceania' && searchInput === '') {
+    return (
+        <div className="countries">
+           {oceania.map(country => 
+            <Country key = {country.name.official} country = {country}  />)} </div>
+    )
 }
+ else {
+
     return (
         <div>
-            <div><select onChange={handleValueChange}>
-                <option value="All">Filter By Region</option>
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-
-            </select></div>
         {searchInput === '' ? <div className="countries">
            {countries.map(country => 
             <Country key = {country.name.official} country = {country}  />)} </div> : <div className="countries">
@@ -52,6 +62,10 @@ if(option === 'Africa') {
         </div>
         
     )
+
+ }
+
+
 }
 
 
