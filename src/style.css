@@ -1,0 +1,71 @@
+:root {
+    --light-gray: #FAFAFA;
+    --dark-gray: #858585;
+}
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito Sans', sans-serif;
+    line-height: 1.5;
+    /*margin: 0 auto;*/
+}
+
+.app-header-wrapper {
+    box-shadow: 0 4px 2px -2px var(--light-gray);
+}
+.app-header, 
+.search-fields,
+.countries {
+    max-width: 1440px;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+.app-header {
+    max-width: 1440px;
+    padding: 20px 30px;
+}
+.switcher-txt {
+    font-weight: 600;
+}
+
+.search-fields input,
+.search-fields select {
+    border-style: hidden;
+    -webkit-box-shadow: -2px 4px 14px 1px rgba(198,198,198,0.58); 
+    box-shadow: -2px 4px 14px 1px rgba(198,198,198,0.58);
+    padding: 13px;
+  }
+  .search-fields input {
+    width: 400px;
+  }
+  
+  .search-fields input:focus
+  .search-fields select:focus {
+    outline: none;
+  }
+  .country-flag-wrapper img {
+    border-radius: 10px 10px 0px 0px;
+  }
+  .country-flag-wrapper {
+      padding-bottom: 15px;
+     
+  }
+  .country-wrapper {
+      padding: 10px 0 10px 0;
+    
+  }
+
+  
+ /* @media (min-width:400px) {
+    .countries {
+        justify-content: center;
+    }
+  }*/
+ 
+
